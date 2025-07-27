@@ -32,7 +32,7 @@ else:
 
     # Create a chat input field to allow the user to enter a message. This will display
     # automatically at the bottom of the page.
-    if prompt := st.chat_input("What is up?"):
+    if prompt := st.chat_input("What is up ?"):
 
         # Store and display the current prompt.
         st.session_state.messages.append({"role": "user", "content": prompt})
@@ -45,5 +45,6 @@ else:
         # Stream the response to the chat using `st.write_stream`, then store it in 
         # session state.
         with st.chat_message("assistant"):
-            response = st.write_stream("Abc")
+            # response = st.write_stream(yield "Abc")
+            response = st.write("Alo 👋")
         st.session_state.messages.append({"role": "assistant", "content": response})
